@@ -16,10 +16,9 @@ html{
 }
 
 
-.detail-body > img:first-child{
+#detailView .detail-body img:first-of-type{
     display:none !important;
 }
-
 
 
 body{
