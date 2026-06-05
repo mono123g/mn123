@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="canonical" href="https://movienova.xyz/" />
+
+  <title>MovieNova - Watch Movies HD Online Free on Movie Nova</title>
+
+<meta charset='UTF-8'/>
+
+  <meta content='MovieNova is your destination for movies. Explore MovieNova.sc, MovieNova.net. Watch new released trending movies online in Movie Nova for free.' name='description'/>
+
+  <meta content='admin' name='author'/>
+
+<meta content='https://movienova.xyz/' name='url'/>
+
+<meta content='Worldwide' name='coverage'/>
+
+<meta content='Global' name='distribution'/>
+
+
+  <meta content="no-referrer" name="referrer"/>
+  <meta content="https://vsembed.su" data-id="d1" name="video-domain"/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Preload JSON -->
+  <link rel="preload" as="fetch" href="json/posts1.json" type="application/json">
+
+  <script src="script.js" defer></script>
+
+
+<link rel="icon" type="image/png" href="/favicon32.png">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9KZF19147"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y9KZF19147');
+</script>
+
+
+
+</head>
+
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-profile">
+        <div class="sidebar-avatar">M</div>
+
+        <div>
+          <h2>MovieNova</h2>
+          <p>Watch Online</p>
+        </div>
+      </div>
+
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+        ×
+      </button>
+    </div>
+
+    <div class="sidebar-content">
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Navigation</div>
+
+        <a class="sidebar-link" href="#top">
+          <span class="icon">⌂</span>
+          <span>Home</span>
+        </a>
+
+        <a class="sidebar-link" href="#latestSection">
+          <span class="icon">★</span>
+          <span>Latest Movies</span>
+        </a>
+
+
+<a class="sidebar-link" href="/dmca">
+        <span class="icon">©️</span>
+        <span>DMCA</span>
+      </a>
+
+
+<a class="sidebar-link" href="/contact">
+        <span class="icon">📞</span>
+        <span>Contact Us</span>
+      </a>
+
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">About</div>
+
+        <p class="sidebar-note">
+          Browse the newest movie posts, search instantly,
+          and move through pages.
+        </p>
+      </div>
+
+    </div>
+  </aside>
+
+  <header class="topbar" id="top">
+
+    <a class="brand" href="/" aria-label="Home">
+
+      <div class="brand-logo">M</div>
+
+      <div class="brand-text">
+        <h1>MovieNova</h1>
+        <p>Watch Online</p>
+      </div>
+
+    </a>
+
+    <div class="topbar-center">
+
+      <div class="search-wrap">
+
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 21l-4.35-4.35"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"/>
+          <circle cx="11"
+                  cy="11"
+                  r="7"
+                  stroke="white"
+                  stroke-width="2"/>
+        </svg>
+
+        <input
+          id="searchInput"
+          class="search-input"
+          type="search"
+          placeholder="Search movies, labels, titles..."
+        >
+
+        <button
+          id="searchClear"
+          class="search-clear"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="topbar-actions">
+
+      <button
+        class="menu-btn search-btn"
+        id="searchBtn"
+        aria-label="Focus search"
+      >
+
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true">
+          <path d="M21 21l-4.35-4.35"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"/>
+          <circle cx="11"
+                  cy="11"
+                  r="7"
+                  stroke="white"
+                  stroke-width="2"/>
+        </svg>
+
+      </button>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+      >
+
+        <div class="menu-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </button>
+
+    </div>
+
+  </header>
+
+  <div class="language-cloud" id="languageCloud">
+    <a href="/?label=Telugu" class="lang-chip">Telugu</a>
+    <a href="/?label=Tamil" class="lang-chip">Tamil</a>
+    <a href="/?label=Hindi" class="lang-chip">Hindi</a>
+    <a href="/?label=Kannada" class="lang-chip">Kannada</a>
+    <a href="/?label=Malayalam" class="lang-chip">Malayalam</a>
+    <a href="/?label=English" class="lang-chip">English</a>
+  </div>
+
+  <div class="app">
+
+    <div id="pageBadge" class="page-badge"></div>
+
+    <div id="searchStatus" class="search-status"></div>
+
+
+<div id="featuredSection">
+
+  <div class="page-title">Featured Movies</div>
+
+  <div id="featuredPosts" class="grid"></div>
+
+</div>
+
+
+    <div class="page-title">Latest Movies</div>
+
+    <div id="latestSection"></div>
+
+    <div id="posts" class="grid"></div>
+
+    <div class="pagination" id="pagination">
+
+      <a id="prevBtn" class="nav-btn" href="/">
+        Prev
+      </a>
+
+      <span id="pageNum">1</span>
+
+      <a id="nextBtn" class="nav-btn" href="?page=2">
+        Next
+      </a>
+
+    </div>
+
+  </div>
+
+<!--<a class="float" href="https://t.me/MovieNova123" target="_blank" aria-label="Telegram">
+    <svg class="tg-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ffffff" d="M9.99 15.96 9.58 21.48c.59 0 .85-.26 1.16-.56l2.79-2.66 5.79 4.24c1.06.59 1.82.28 2.09-.98L24 3.76c.34-1.56-.56-2.17-1.6-1.78L1.66 9.05C.14 9.64.16 10.49 1.39 10.87l5.6 1.75L20.99 4.55c.78-.49 1.5-.22.91.31L9.99 15.96z"/>
+    </svg>
+</a>-->
+
+</body>
+</html>

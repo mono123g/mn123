@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" type="image/png" href="/favicon32.png">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9KZF19147"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y9KZF19147');
+</script>
+
+
+<title>Download</title>
+
+<style>
+
+/* =========================
+   DOWNLOAD SECTION
+========================= */
+
+.wrapper{
+  position:relative;
+  max-width:520px;
+  margin:90px auto 40px;
+  padding:40px 28px;
+  border-radius:28px;
+
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  overflow:hidden;
+  text-align:center;
+}
+
+/* glow effect */
+.wrapper::before{
+  content:"";
+  position:absolute;
+  inset:-120px;
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(255,46,68,0.22),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,255,255,0.08),
+    transparent 30%);
+
+  pointer-events:none;
+}
+
+.wrapper h2{
+  position:relative;
+  margin:0 0 14px;
+  font-size:32px;
+  line-height:1.2;
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+.wrapper p{
+  position:relative;
+  color:rgba(255,255,255,0.78);
+  font-size:16px;
+  line-height:1.6;
+  margin-bottom:24px;
+}
+
+/* Countdown circle */
+#countdown{
+  position:relative;
+
+  width:140px;
+  height:140px;
+
+  margin:20px auto 28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  font-size:42px;
+  font-weight:800;
+  color:#fff;
+
+  background:
+    linear-gradient(135deg,
+    rgba(255,46,68,0.95),
+    rgba(255,90,110,0.85));
+
+  box-shadow:
+    0 0 30px rgba(255,46,68,0.35),
+    inset 0 2px 8px rgba(255,255,255,0.25);
+}
+
+/* Download button */
+#downloadBtn{
+  position:relative;
+
+  display:none;
+  text-decoration:none;
+
+  padding:15px 34px;
+
+  border-radius:14px;
+
+  font-size:17px;
+  font-weight:700;
+  letter-spacing:.3px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(135deg,
+    #ff2e44,
+    #ff5a6e);
+
+  box-shadow:
+    0 10px 25px rgba(255,46,68,0.35);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    opacity .3s ease;
+
+  pointer-events:none;
+  opacity:0;
+}
+
+#downloadBtn.active{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  pointer-events:auto;
+  opacity:1;
+}
+
+#downloadBtn:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 16px 35px rgba(255,46,68,0.45);
+}
+
+#downloadBtn:active{
+  transform:scale(.98);
+}
+
+/* Note */
+.note{
+  position:relative;
+
+  margin-top:22px;
+
+  font-size:14px;
+  color:rgba(255,255,255,0.55);
+
+  line-height:1.6;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .wrapper{
+    width:calc(100% - 22px);
+    margin:80px auto 30px;
+
+    padding:34px 20px;
+
+    border-radius:24px;
+  }
+
+  .wrapper h2{
+    font-size:26px;
+  }
+
+  .wrapper p{
+    font-size:15px;
+  }
+
+  #countdown{
+    width:120px;
+    height:120px;
+    font-size:36px;
+  }
+
+  #downloadBtn{
+    width:100%;
+    padding:15px 20px;
+    font-size:16px;
+  }
+
+}
+
+/* =========================
+   SMALL DEVICES
+========================= */
+
+@media(max-width:480px){
+
+  .wrapper{
+    padding:30px 16px;
+  }
+
+  .wrapper h2{
+    font-size:23px;
+  }
+
+  #countdown{
+    width:105px;
+    height:105px;
+    font-size:32px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-profile">
+      <div class="sidebar-avatar">M</div>
+
+      <div>
+        <h2>MovieNova</h2>
+        <p>Watch Online</p>
+      </div>
+    </div>
+
+    <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">×</button>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+
+      <a class="sidebar-link" href="/">
+        <span class="icon">⌂</span>
+        <span>Home</span>
+      </a>
+
+      <a class="sidebar-link" href="#downloadSection">
+        <span class="icon">★</span>
+        <span>Download</span>
+      </a>
+
+
+<a class="sidebar-link" href="/dmca">
+        <span class="icon">©️</span>
+        <span>DMCA</span>
+      </a>
+
+
+<a class="sidebar-link" href="/contact">
+        <span class="icon">📞</span>
+        <span>Contact Us</span>
+      </a>
+
+
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">About</div>
+
+      <p class="sidebar-note">
+        Browse the newest movie posts, search instantly, open details,
+        and move through pages.
+      </p>
+    </div>
+  </div>
+</aside>
+
+<header class="topbar" id="top">
+  <a class="brand" href="/" aria-label="Home">
+    <div class="brand-logo">M</div>
+
+    <div class="brand-text">
+      <h1>MovieNova</h1>
+      <p>Watch Online</p>
+    </div>
+  </a>
+
+  <div class="topbar-center">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 21l-4.35-4.35"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"/>
+        <circle cx="11"
+                cy="11"
+                r="7"
+                stroke="white"
+                stroke-width="2"/>
+      </svg>
+
+      <input
+        id="searchInput"
+        class="search-input"
+        type="search"
+        placeholder="Search movies, labels, titles..."
+      >
+
+      <button
+        id="searchClear"
+        class="search-clear"
+        aria-label="Clear search"
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+
+  <div class="topbar-actions">
+    <button
+      class="menu-btn search-btn"
+      id="searchBtn"
+      aria-label="Search"
+      type="button"
+    >
+      <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true">
+        <path d="M21 21l-4.35-4.35"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"/>
+        <circle cx="11"
+                cy="11"
+                r="7"
+                stroke="white"
+                stroke-width="2"/>
+      </svg>
+    </button>
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Open menu"
+      type="button"
+    >
+      <div class="menu-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</header>
+
+<!-- DOWNLOAD SECTION -->
+
+<div class="wrapper" id="downloadSection">
+
+  <h2>Preparing Your Download</h2>
+
+  <p id="statusText">
+    Please wait, your download link will be ready in:
+  </p>
+
+  <div id="countdown">5</div>
+
+  <a id="downloadBtn" href="javascript:void(0)">
+    Download Now
+  </a>
+
+  <div class="note">
+    Do not close this page while waiting.
+  </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const sidebar = document.getElementById("sidebar");
+  const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebarClose = document.getElementById("sidebarClose");
+
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+  const searchClear = document.getElementById("searchClear");
+
+  function openSidebar() {
+    sidebar?.classList.add("active");
+    sidebarOverlay?.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeSidebar() {
+    sidebar?.classList.remove("active");
+    sidebarOverlay?.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  function runSearch() {
+    const value = searchInput?.value.trim();
+    if (!value) return;
+    window.location.href = "/?search=" + encodeURIComponent(value);
+  }
+
+  menuBtn?.addEventListener("click", openSidebar);
+  sidebarClose?.addEventListener("click", closeSidebar);
+  sidebarOverlay?.addEventListener("click", closeSidebar);
+
+  searchBtn?.addEventListener("click", runSearch);
+
+  searchClear?.addEventListener("click", () => {
+    if (searchInput) searchInput.value = "";
+    searchInput?.focus();
+  });
+
+  searchInput?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      runSearch();
+    }
+  });
+
+});
+</script>
+
+<script>
+
+// Countdown seconds
+var seconds = 5;
+
+var countdownEl = document.getElementById("countdown");
+var downloadBtn = document.getElementById("downloadBtn");
+var statusText = document.getElementById("statusText");
+
+// Get URL params
+var params = new URLSearchParams(window.location.search);
+
+var targetPath = params.get("target");
+var domainKey = params.get("d");
+
+// Domain list
+var domains = {
+  d1: "https://1fichier.com",
+  d2: "https://dailyuploads.net",
+  d3: "https://nitroflare.com",
+  d4: "https://mixdrop.top",
+  d5: "https://hashgen.website",
+  d6: "https://www.messycloud.ink"
+};
+
+// Determine final link
+var domain = domains[domainKey];
+
+var finalLink = targetPath
+  ? (domain ? domain + targetPath : targetPath)
+  : null;
+
+// Check target
+if (!targetPath) {
+
+  countdownEl.innerHTML = "0";
+  statusText.innerHTML = "Invalid download link.";
+
+} else {
+
+  var timer = setInterval(function(){
+
+    countdownEl.innerHTML = seconds;
+
+    seconds--;
+
+    if (seconds < 0) {
+
+      clearInterval(timer);
+
+      countdownEl.innerHTML = "Ready!";
+      statusText.innerHTML = "Your download link is ready.";
+
+      downloadBtn.classList.add("active");
+
+      // Click event
+      downloadBtn.addEventListener("click", function(){
+        window.location.href = finalLink;
+      });
+
+    }
+
+  }, 1000);
+
+}
+
+</script>
+
+
+<!--<a class="float" href="https://t.me/MovieNova123" target="_blank" aria-label="Telegram">
+    <svg class="tg-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#ffffff" d="M9.99 15.96 9.58 21.48c.59 0 .85-.26 1.16-.56l2.79-2.66 5.79 4.24c1.06.59 1.82.28 2.09-.98L24 3.76c.34-1.56-.56-2.17-1.6-1.78L1.66 9.05C.14 9.64.16 10.49 1.39 10.87l5.6 1.75L20.99 4.55c.78-.49 1.5-.22.91.31L9.99 15.96z"/>
+    </svg>
+</a>-->
+
+</body>
+</html>
