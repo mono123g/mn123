@@ -15,11 +15,9 @@ html{
   text-decoration: none;
 }
 
-
-#detailView .detail-body img:first-of-type{
+.post-thumbnail{
     display:none !important;
 }
-
 
 body{
   background:
