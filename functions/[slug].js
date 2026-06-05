@@ -442,11 +442,11 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<a class="float" href="https://t.me/MovieNova123" target="_blank" aria-label="Telegram">
+<!--<a class="float" href="https://t.me/MovieNova123" target="_blank" aria-label="Telegram">
     <svg class="tg-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path fill="#ffffff" d="M9.99 15.96 9.58 21.48c.59 0 .85-.26 1.16-.56l2.79-2.66 5.79 4.24c1.06.59 1.82.28 2.09-.98L24 3.76c.34-1.56-.56-2.17-1.6-1.78L1.66 9.05C.14 9.64.16 10.49 1.39 10.87l5.6 1.75L20.99 4.55c.78-.49 1.5-.22.91.31L9.99 15.96z"/>
     </svg>
-</a>
+</a>-->
 
 </body>
 </html>
