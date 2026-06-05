@@ -355,6 +355,7 @@ export async function onRequest(context) {
 
       ${image ? `
         <img
+          class="post-thumbnail"
           src="${image}"
           alt="${title}"
           style="
